@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CODE SCHOOL - Python Tutorial</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">
+      <h1 class="logo-text"><span>Code</span>School</h1>
+    </div>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html #about">About</a></li>
+      <li><a href="index.html #contact">Contact</a></li>
+    </ul>
+  </header>
+  <!-- //Navigation Bar -->
+
+  <!-- Page Wrapper -->
+  <div class="page-wrapper">
+
+     <!-- Content -->
+  <div class="content clearfix">
+    <!-- Main Content -->
+    <div class="main-content single">
+
+    <h1 class="post-title">Python - Tuples</h1>
+
+      <div class="post-content">
+        <p>A tuple is a collection of objects which ordered and immutable. Tuples are sequences, just like lists. The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets.</p>
+        <p>Creating a tuple is as simple as putting different comma-separated values. Optionally you can put these comma-separated values between parentheses also. For example &minus;</p>
+        <pre class="result notranslate">
+        tup1 = ('physics', 'chemistry', 1997, 2000);
+        tup2 = (1, 2, 3, 4, 5 );
+        tup3 = "a", "b", "c", "d";
+        </pre>
+        <p>The empty tuple is written as two parentheses containing nothing &minus;</p>
+        <pre class="result notranslate">
+        tup1 = ();
+        </pre>
+        <p>To write a tuple containing a single value you have to include a comma, even though there is only one value &minus;</p>
+        <pre class="result notranslate">
+        tup1 = (50,);
+        </pre>
+        <p>Like string indices, tuple indices start at 0, and they can be sliced, concatenated, and so on.</p>
+        <h2>Accessing Values in Tuples</h2>
+        <p>To access values in tuple, use the square brackets for slicing along with the index or indices to obtain value available at that index. For example &minus;</p>
+        <pre class="prettyprint notranslate">
+        #!/usr/bin/python
+
+        tup1 = ('physics', 'chemistry', 1997, 2000);
+        tup2 = (1, 2, 3, 4, 5, 6, 7 );
+        print "tup1[0]: ", tup1[0];
+        print "tup2[1:5]: ", tup2[1:5];
+        </pre>
+        <p>When the above code is  executed, it produces the following result &minus;</p>
+        <pre class="result notranslate">
+        tup1[0]:  physics
+        tup2[1:5]:  [2, 3, 4, 5]
+        </pre>
+        <h2>Updating Tuples</h2>
+        <p>Tuples are immutable which means you cannot update or change the values of tuple elements. You are able to take portions of existing tuples to create new tuples as the following example demonstrates &minus;</p>
+        <pre class="prettyprint notranslate">
+        #!/usr/bin/python
+
+        tup1 = (12, 34.56);
+        tup2 = ('abc', 'xyz');
+
+        # Following action is not valid for tuples
+        # tup1[0] = 100;
+
+        # So let's create a new tuple as follows
+        tup3 = tup1 + tup2;
+        print tup3;
+        </pre>
+        <p>When the above code is executed, it produces the following result &minus;</p>
+        <pre class="result notranslate">
+        (12, 34.56, 'abc', 'xyz')
+        </pre>
+        <h2>Delete Tuple Elements</h2>
+        <p>Removing individual tuple elements is not possible. There is, of course, nothing wrong with putting together another tuple with the undesired elements discarded.</p>
+        <p>To explicitly remove an entire tuple, just use the <b>del</b> statement. For example &minus;</p>
+        <pre class="prettyprint notranslate">
+        #!/usr/bin/python
+
+        tup = ('physics', 'chemistry', 1997, 2000);
+        print tup;
+        del tup;
+        print "After deleting tup : ";
+        print tup;
+        </pre>
+        <p>This produces the following result. Note an exception raised, this is because after <b>del tup</b> tuple does not exist any more &minus;</p>
+        <pre class="result notranslate">
+        ('physics', 'chemistry', 1997, 2000)
+        After deleting tup :
+        Traceback (most recent call last):
+        File "test.py", line 9, in &lt;module&gt;
+            print tup;
+        NameError: name 'tup' is not defined
+        </pre>
+        <h2>Basic Tuples Operations</h2>
+        <p>Tuples respond to the + and * operators much like strings; they mean concatenation and repetition here too, except that the result is a new tuple, not a string.</p>
+        <p>In fact, tuples respond to all of the general sequence operations we used on strings in the prior chapter &minus;</p>
+        <table class="table table-bordered" style="text-align:center;">
+        <tr>
+        <th style="text-align:center;">Python Expression</th>
+        <th style="text-align:center;">Results</th>
+        <th style="text-align:center;">Description</th>
+        </tr>
+        <tr>
+        <td>len((1, 2, 3))</td>
+        <td>3</td>
+        <td>Length</td>
+        </tr>
+        <tr>
+        <td>(1, 2, 3) + (4, 5, 6)</td>
+        <td>(1, 2, 3, 4, 5, 6)</td>
+        <td>Concatenation</td>
+        </tr>
+        <tr>
+        <td>('Hi!',) * 4</td>
+        <td>('Hi!', 'Hi!', 'Hi!', 'Hi!')</td>
+        <td>Repetition</td>
+        </tr>
+        <tr>
+        <td>3 in (1, 2, 3)</td>
+        <td>True</td>
+        <td>Membership</td>
+        </tr>
+        <tr>
+        <td>for x in (1, 2, 3): print x,</td>
+        <td>1 2 3</td>
+        <td>Iteration</td>
+        </tr>
+        </table>
+        <h2>Indexing, Slicing, and Matrixes</h2>
+        <p>Because tuples are sequences, indexing and slicing work the same way for tuples as they do for strings. Assuming following input &minus;</p>
+        <pre class="prettyprint notranslate">
+        L = ('spam', 'Spam', 'SPAM!')
+        </pre>
+        <p>&nbsp;</p>
+        <table class="table table-bordered" style="text-align:center;">
+        <tr>
+        <th style="text-align:center;width:33%">Python Expression</th>
+        <th style="text-align:center;width:33%">Results</th>
+        <th style="text-align:center;width:33%">Description</th>
+        </tr>
+        <tr>
+        <td>L[2]</td>
+        <td>'SPAM!'</td>
+        <td>Offsets start at zero</td>
+        </tr>
+        <tr>
+        <td class="ts">L[-2]</td>
+        <td class="ts">'Spam'</td>
+        <td>Negative: count from the right</td>
+        </tr>
+        <tr>
+        <td>L[1:]</td>
+        <td>['Spam', 'SPAM!']</td>
+        <td>Slicing fetches sections</td>
+        </tr>
+        </table>
+        <h2>No Enclosing Delimiters</h2>
+        <p>Any set of multiple objects, comma-separated, written without identifying symbols, i.e., brackets for lists, parentheses for tuples, etc., default to tuples, as indicated in these short examples &minus;</p>
+        <pre class="prettyprint notranslate">
+        #!/usr/bin/python
+
+        print 'abc', -4.24e93, 18+6.6j, 'xyz';
+        x, y = 1, 2;
+        print "Value of x , y : ", x,y;
+        </pre>
+        <p>When the above code is executed, it produces the following result &minus;</p>
+        <pre class="result notranslate">
+        abc -4.24e+93 (18+6.6j) xyz
+        Value of x , y : 1 2
+        </pre>
+        <h2>Built-in Tuple Functions</h2>
+        <p>Python includes the following tuple functions &minus;</p>
+        <table class="table table-bordered">
+        <tr>
+        <th style="text-align:center;width:5%">Sr.No.</th>
+        <th style="text-align:center;width:95%">Function with Description</th>
+        </tr>
+        <tr>
+        <td class="ts">1</td>
+        <td>cmp(tuple1, tuple2)
+        <p>Compares elements of both tuples.</p></td>
+        </tr>
+        <tr>
+        <td class="ts">2</td>
+        <td>len(tuple)
+        <p>Gives the total length of the tuple.</p></td>
+        </tr>
+        <tr>
+        <td class="ts">3</td>
+        <td>max(tuple)
+        <p>Returns item from the tuple with max value.</p></td>
+        </tr>
+        <tr>
+        <td class="ts">4</td>
+        <td>min(tuple)
+        <p>Returns item from the tuple with min value.</p></td>
+        </tr>
+        <tr>
+        <td class="ts">5</td>
+        <td>tuple(seq)
+        <p>Converts a list into tuple.</p></td>
+        </tr>
+        </table>
+      </div>
+
+    </div>
+    <!-- //Main Content  -->
+
+    <!-- Sidebar -->
+    <div class="sidebar single">
+        <div class="section topic">
+          <h2 class="section-title">Other Posts</h2>
+          <ul>
+            <li><a href="overview.html">Python - Overview</a></li>
+            <li><a href="setup.html">Python - Environment Setup</a></li>
+            <li><a href="syntax.html">Python - Basic Syntax</a></li>
+            <li><a href="variable.html">Python - Variable Types</a></li>
+            <li><a href="operators.html">Python - Basic Operators</a></li>
+            <li><a href="decision.html">Python - Decision Making</a></li>
+            <li><a href="loops.html">Python - Loops</a></li>
+            <li><a href="tuples.html">Python - Tuples</a></li>
+            <li><a href="dictionary.html">Python - Dictionary</a></li>
+            <li><a href="date.html">Python - Date & Time</a></li>
+            <li><a href="functions.html">Python - Functions</a></li>
+            <li><a href="modules.html">Python - Modules</a></li>
+            <li><a href="#">Python - Files I/O</a></li>
+            <li><a href="#">Python - Exceptions</a></li>
+          </ul>
+        </div>
+    </div>
+    <!-- //Sidebar -->
+
+  </div>
+  <!-- //Content -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Footer -->
+  <div class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-section about">
+        <h1 class="logo-text"><span>Code</span>School</h1>
+        <p>
+          CodeSchool is an education website. But not one in the way you might think. 
+          We’re committed to building the best learning experience inside and out, making CodeSchool the best place for our team to learn, teach, and create the online learning experience of the future.We are rethinking education from the bottom up.
+        </p>
+        <div class="contact">
+          <span><i class="fas fa-phone"></i> &nbsp; 022-67308000</span> 
+          <span><i class="fas fa-envelope"></i> &nbsp; abc@thakureducation.org</span>
+        </div> 
+        <div class="socials">
+          <a href="#" class="facebook-icon"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="instagram-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="twitter-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="youtube-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <br>
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+          <a href="index.html #about"><li>About</li></a>
+          <a href="index.html #contact"><li>Contact</li></a>
+          <a href="team.html"><li>Our Team</li></a>
+          <a href="#"><li>Terms and Conditions</li></a>
+        </ul>
+      </div>
+
+      <div class="footer-section contact-form">
+        <h2>Contact Us</h2>
+        <br>
+        <form action="index.html" method="post">
+          <input type="email" name="email" class="text-input contact-input" placeholder="Your email address">
+          <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+          <button type="submit" class="btn btn-big contact-btn">
+            <i class="fas fa-envelope"></i>
+            Send</button>
+        </form>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy; codeschool.com | Designed by Aquib Ahmed, Akhilesh Burungale, Gyanprakash Dubey
+    </div>
+  </div>
+  <!-- //Footer -->
+
+</body>
+
+</html>
